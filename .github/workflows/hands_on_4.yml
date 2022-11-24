@@ -1,0 +1,20 @@
+name: Hands-on 4
+on: pull_request
+jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup python
+        uses: actions/setup-python@v4
+      - name: Run unit test
+        run: python test_plus.py -v
+      - name: slack notify
+        if: ${{ failure() }}
+        env:
+          SLACK_CHANNEL: '#mk-qa-random'
+          SLACK_MESSAGE: 'Unit test failed. Please check the result'
+        run: bash .github/scripts/slack_notify.sh
