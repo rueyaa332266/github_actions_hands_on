@@ -1,0 +1,13 @@
+name: Hands-on 1
+on: pull_request
+jobs:
+  run_commands:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'hello world'
+      - name: Check user
+        run: whoami
+      - name: Run some commands
+        run: |
+          pwd
+          ls -l
