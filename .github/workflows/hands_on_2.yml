@@ -6,7 +6,7 @@ jobs:
     env:
       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       SLACK_CHANNEL: '#mk-qa-random'
-      SLACK_MESSAGE: 'Message from hands-on demo'
+      SLACK_MESSAGE: 'This is a test, if this doesn't work Jye owes me ¥10000'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
