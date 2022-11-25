@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      SLACK_CHANNEL: '#mk-qa-random'
+      SLACK_CHANNEL: 'D039LAM76BA'
       SLACK_MESSAGE: 'Message from hands-on demo'
     steps:
       - name: Checkout
