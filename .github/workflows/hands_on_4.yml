@@ -15,6 +15,6 @@ jobs:
       - name: slack notify
         if: ${{ failure() }}
         env:
-          SLACK_CHANNEL: '#mk-qa-random'
+          SLACK_CHANNEL: 'D039LAM76BA'
           SLACK_MESSAGE: 'Unit test failed. Please check the result'
         run: bash .github/scripts/slack_notify.sh
